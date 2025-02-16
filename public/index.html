@@ -3,17 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Custom Element</title>
+    <title>Test Custom Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(ellipse 120% 75% at center top, 
+                        rgba(37, 36, 89, 0.95) -45%,  
+                        rgba(0, 0, 0, 0.98) 55%);  
+            color: white;
+            height: 100vh;
+        }
+    </style>
     <script type="module">
-        import { CustomTopNavbar } from "https://esm.sh/gh/petegordon/panel_components@main/custom-top-navbar/custom-top-navbar.js";
-        //import { CustomTopNavbar } from "https://cdn.jsdelivr.net/gh/petegordon/panel-components@main/custom-top-navbar/custom-top-navbar.js";
-
+        import { CustomTopNavbar } from "https://cdn.jsdelivr.net/gh/petegordon/panel_components@main/custom-top-navbar/custom-top-navbar.js";
+        
         document.addEventListener("DOMContentLoaded", () => {
-            document.body.appendChild(new CustomTopNavbar());
+            const navbar = document.createElement("custom-top-navbar");
+            
+            // ✅ Set the data-nav attribute with JSON
+            navbar.setAttribute("data-nav", JSON.stringify({
+                "Home": "/",
+                "About": "/about",
+                "Services": {
+                    "Web Development": "/services/web",
+                    "SEO Optimization": "/services/seo",
+                    "Consulting": "/services/consulting"
+                },
+                "Contact": "/contact"
+            }));
+
+            document.body.prepend(navbar); // Add to the top of the page
         });
     </script>
 </head>
 <body>
-    <div>Hello World</div>
+    <h1>Welcome to the Test Page</h1>
 </body>
 </html>
