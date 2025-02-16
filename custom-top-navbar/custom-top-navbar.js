@@ -243,5 +243,8 @@ class CustomTopNavbar extends HTMLElement {
     }
 }
 
+export default CustomTopNavbar;
 // Register the custom element
-customElements.define("custom-navbar", CustomTopNavbar);
+if (!customElements.get("custom-top-navbar")) {
+    customElements.define("custom-top-navbar", CustomTopNavbar);
+}
