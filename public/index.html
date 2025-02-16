@@ -18,7 +18,11 @@
     <script type="module">
 
         import { CustomTopNavbar } from "https://cdn.jsdelivr.net/gh/petegordon/panel_components@latest/custom-top-navbar/custom-top-navbar.js";
-        
+
+        // Had issues with esm not resovling github correctly and had to use jsdelivr
+        //import { CustomTopNavbar } from "https://esm.sh/gh/petegordon/panel_components@latest/custom-top-navbar/custom-top-navbar.js";
+
+
         document.addEventListener("DOMContentLoaded", () => {
             const navbar = document.createElement("custom-top-navbar");
             

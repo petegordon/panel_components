@@ -167,10 +167,10 @@ class CustomTopNavbar extends HTMLElement {
 
     connectedCallback() {
         // ✅ Fetch the attribute inside `connectedCallback` to avoid `null` issue
-        const navDataAttr = this.getAttribute('data-nav');
+        const navDataAttr = this.getAttribute('data-nav');        
         if (!navDataAttr) {
-            console.error("Missing 'data-nav' attribute in <custom-top-navbar>");
-            return;
+            navDataAttr = '{"Home": "/", "About": "/about" }';
+            console.error("Missing 'data-nav' attribute in <custom-top-navbar>, setting default value:", navDataAttr);
         }
 
         try {
