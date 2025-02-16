@@ -1,0 +1,9 @@
+{
+    "name": "panel-components",
+    "version": "1.0.0",
+    "type": "module",
+    "exports": {
+      "./custom-top-navbar": "./custom-top-navbar/custom-top-navbar.js",
+      "./animation-main-content": "./animation-main-content/index.js"
+    }
+  }
