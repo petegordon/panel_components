@@ -156,5 +156,3 @@ export { AnimatedContent };
 if (!customElements.get("animation-main-content")) {
     customElements.define("animation-main-content", AnimatedContent);
 }
-// Register the custom element
-customElements.define('animation-main-content', AnimatedContent);
