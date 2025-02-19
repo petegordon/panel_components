@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Custom Panel App{% endblock %}</title>
+</head>
+<body>
+
+<header class="custom-header">
+    <h1>{% block site_title %} Jinja Template{% endblock %}</h1>
+</header>
+
+<div class="content">
+    <aside class="custom-sidebar">
+        {{ embed(roots.sidebar) }}  <!-- Sidebar content injected here -->
+    </aside>
+    
+    <main class="main-content">
+        {{ embed(roots.main) }}  <!-- Main content injected here -->
+    </main>
+</div>
+
+</body>
+</html>
