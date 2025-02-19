@@ -2,21 +2,21 @@
 
 {% block custom_css %}
 <style>
-  :root {
-    --header-background: {{ header_background or "var(--design-primary-color, var(--panel-primary-color))" }};
-    --header-color: {{ header_color or "var(--design-primary-text-color, var(--panel-on-primary-color))" }};
-    --sidebar-width: {{ sidebar_width }}px;
-  }
+  body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(ellipse 120% 75% at center top, 
+                  rgba(37, 36, 89, 0.95) -45%,  
+                  rgba(0, 0, 0, 0.98) 55%);  
+      color: white;
+      height: 100vh;
+      --sidebar-width: {{ sidebar_width }}px;      
+  }  
   #header {
-    --background-color: var(--header-background);
     --text-color: var(--header-color);
     --design-background-text-color: var(--header-color);
     --design-background-color: var(--header-background);
-    background-color: var(--header-background);
     color: var(--header-color);
-    {% if theme._name == 'default' %}
-    box-shadow: 5px 5px 20px silver;
-    {% endif %}
   }
   #sidebar {
     width: var(--sidebar-width);
@@ -38,9 +38,11 @@
     {% endif %}
     <div class="app-header">
       {% if app_logo %}
+    <!--
       <a href="{{ site_url }}">
-	<img src="{{ app_logo }}" class="app-logo"></img>
+	 <img src="{{ app_logo }}" class="app-logo"></img>
       </a>
+    -->      
       {% endif %}
       {% if site_title %}
       <!-- <a class="title" href="{{ site_url }}" >&nbsp;{{ site_title }}</a> -->
@@ -73,6 +75,7 @@
 
   {% block content %}
   <div id="content">
+  
     {% if nav %}
     <div class="sidenav {{'hidden' if collapsed_sidebar else ''}}" id="sidebar">
       <ul class="nav flex-column">
@@ -86,6 +89,7 @@
       </ul>
     </div>
     {% endif %}
+  
 
     {% block main %}
     <div class="main" id="main">

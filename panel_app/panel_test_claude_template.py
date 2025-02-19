@@ -27,7 +27,7 @@ main = pn.Column(
 # Create template using VanillaTemplate instead of BaseTemplate
 
 nav_tree = {
-    "Home:": "/",
+    "Hello World": "/",
     "About Us All": "/about",
     "Services Please": {"Service 1": "/service1", "Service 2": "/service2", "Service 3": "/service3"},
     "Contact": "/contact"
@@ -37,10 +37,8 @@ top_navbar = CustomTopNavbarESM(nav_tree=nav_tree)
 
 template = CustomTemplate(
     title="My Dashboard",
-    sidebar=sidebar,
     header=top_navbar,
-    main=main,
-    sidebar_width=250
+    main=main
 )
 
 # Serve
