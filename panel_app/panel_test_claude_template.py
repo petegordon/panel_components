@@ -2,6 +2,7 @@ import panel as pn
 import pathlib
 
 from custom_top_navbar import CustomTopNavbarESM
+from animation_main_content import AnimatinoContentESM
 
 # Initialize Panel
 pn.extension()
@@ -19,9 +20,11 @@ sidebar = pn.Column(
     pn.widgets.Button(name="Settings", width=200)
 )
 
+animation_content = AnimatinoContentESM()
 main = pn.Column(
     pn.pane.Markdown("## Welcome to Dashboard"),
     pn.pane.Markdown("This is the main content area."),
+    animation_content
 )
 
 # Create template using VanillaTemplate instead of BaseTemplate
